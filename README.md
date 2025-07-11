@@ -1,14 +1,13 @@
-# AI Job Board
+# Hire-Mind
 
 This project is a modern job board application that leverages AI to connect job seekers with relevant opportunities. The application is built with a Next.js frontend and a FastAPI backend.
 
 ## Project Overview
 
-The AI Job Board provides a platform for employers to post job openings and for job seekers to search and apply for jobs. The key features include:
+Hire-Mind provides a platform for employers to post job openings and for job seekers to search and apply for jobs. The key features include:
 
 - **AI-powered job matching:** Utilizes AI to match job seekers with the most relevant job postings based on their skills and experience.
-- **User authentication and billing:** Secure user authentication and subscription-based billing are handled by Clerk.
-- **Environment variable management:** Type-safe environment variable management is implemented using `@t3-oss/env-nextjs`.
+- **User authentication and billing:** Secure user authentication and subscription-based billing.
 
 ## Tech Stack
 
@@ -23,7 +22,10 @@ The AI Job Board provides a platform for employers to post job openings and for 
 ### Backend
 
 - **Framework:** FastAPI
-- **Database:** PostgreSQL (via Docker)
+- **Database:** SQLite (for development), PostgreSQL (for production)
+- **ORM:** SQLAlchemy
+- **Migrations:** Alembic
+- **Dependency Management:** uv
 
 ## Getting Started
 
@@ -31,31 +33,41 @@ The AI Job Board provides a platform for employers to post job openings and for 
 
 - Node.js
 - Python
-- Docker
+- Docker (optional, for production deployment)
 
 ### Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/job-board-ai.git
+   git clone https://github.com/jojomensah89/hire-mind.git
    ```
 2. **Navigate to the project directory:**
    ```bash
-   cd job-board-ai
+   cd hire-mind
    ```
-3. **Install frontend dependencies:**
+3. **Install backend dependencies:**
    ```bash
-   cd frontend
+   cd backend
+   uv pip install -r requirements.txt
+   ```
+4. **Install frontend dependencies:**
+   ```bash
+   cd ../frontend
    npm install
    ```
-4. **Install backend dependencies:**
+
+### Running the Application
+
+1. **Start the backend development server:**
    ```bash
-   cd ../backend
-   pip install -r requirements.txt
+   cd backend
+   uvicorn main:app --reload
    ```
-5. **Start the development servers:**
-   - **Frontend:** `npm run dev`
-   - **Backend:** `uvicorn main:app --reload`
+2. **Start the frontend development server:**
+   ```bash
+   cd ../frontend
+   npm run dev
+   ```
 
 ## Contributing
 
