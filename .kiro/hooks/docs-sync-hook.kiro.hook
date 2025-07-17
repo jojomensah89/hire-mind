@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "name": "Documentation Sync",
+  "description": "Listens to source files in backend (Python) and frontend (TypeScript) and updates documentation in README and docs folder when changes occur",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "backend/**/*.py",
+      "frontend/**/*.ts",
+      "frontend/**/*.tsx",
+      "backend/pyproject.toml",
+      "frontend/package.json",
+      "frontend/tsconfig.json",
+      "backend/alembic.ini"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Source code files have been modified. Please review the changes and update the relevant documentation in the README.md file and/or the docs/ folder to reflect any new features, API changes, configuration updates, or architectural modifications. Focus on keeping the documentation accurate and up-to-date with the current codebase."
+  }
+}

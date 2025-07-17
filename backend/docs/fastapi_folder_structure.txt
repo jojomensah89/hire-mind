@@ -1,117 +1,84 @@
 job_board_app/
 ├── app/
 │   ├── __init__.py
-│   ├── main.py
-│   ├── config/
-│   │   ├── __init__.py
-│   │   ├── settings.py
-│   │   ├── database.py
-│   │   └── logging.py
 │   ├── api/
 │   │   ├── __init__.py
-│   │   ├── dependencies.py
-│   │   ├── v1/
-│   │   │   ├── __init__.py
-│   │   │   ├── router.py
-│   │   │   └── endpoints/
-│   │   │       ├── __init__.py
-│   │   │       ├── users.py
-│   │   │       ├── organizations.py
-│   │   │       ├── job_listings.py
-│   │   │       └── admin.py
-│   │   └── middleware/
-│   │       ├── __init__.py
-│   │       ├── auth.py
-│   │       ├── cors.py
-│   │       ├── rate_limiting.py
-│   │       └── logging.py
+│   │   ├── auth/
+│   │   ├── middleware/
+│   │   └── v1/
+│   ├── config/
+│   │   ├── __init__.py
+│   │   ├── logging.py
+│   │   └── settings.py
 │   ├── core/
 │   │   ├── __init__.py
-│   │   ├── security.py
+│   │   ├── constants.py
+│   │   ├── dependencies/
 │   │   ├── permissions.py
-│   │   ├── exceptions.py
-│   │   └── constants.py
+│   │   └── security.py
 │   ├── db/
 │   │   ├── __init__.py
 │   │   ├── base.py
+│   │   ├── enums.py
 │   │   ├── session.py
-│   │   ├── models/
-│   │   │   ├── __init__.py
-│   │   │   ├── user.py
-│   │   │   ├── user_notification_settings.py
-│   │   │   ├── user_resume.py
-│   │   │   ├── organization.py
-│   │   │   ├── organization_user_settings.py
-│   │   │   ├── job_listing.py
-│   │   │   └── job_listing_application.py
-│   │   └── migrations/
-│   │       ├── env.py
-│   │       ├── script.py.mako
-│   │       └── versions/
-│   ├── schemas/
-│   │   ├── __init__.py
-│   │   ├── user.py
-│   │   ├── organization.py
-│   │   ├── job_listing.py
-│   │   ├── auth.py
-│   │   └── response.py
-│   ├── services/
-│   │   ├── __init__.py
-│   │   ├── user_service.py
-│   │   ├── organization_service.py
-│   │   ├── job_listing_service.py
-│   │   ├── auth_service.py
-│   │   └── admin_service.py
+│   │   ├── migrations/
+│   │   └── models/
 │   ├── repositories/
 │   │   ├── __init__.py
-│   │   ├── user_repository.py
+│   │   ├── job_listing_application_repository.py
+│   │   ├── job_listing_repository.py
 │   │   ├── organization_repository.py
-│   │   └── job_listing_repository.py
-│   ├── utils/
+│   │   ├── organization_user_settings_repository.py
+│   │   ├── user_notification_settings_repository.py
+│   │   ├── user_repository.py
+│   │   └── user_resume_repository.py
+│   ├── schemas/
 │   │   ├── __init__.py
-│   │   ├── email.py
-│   │   ├── validators.py
-│   │   ├── helpers.py
-│   │   └── formatters.py
-│   └── tests/
-│       ├── __init__.py
-│       ├── conftest.py
-│       ├── test_auth.py
-│       ├── test_users.py
-│       ├── test_organizations.py
-│       ├── test_job_listings.py
-│       ├── test_admin.py
-│       ├── test_services/
-│       │   ├── __init__.py
-│       │   ├── test_user_service.py
-│       │   ├── test_organization_service.py
-│       │   └── test_job_listing_service.py
-│       └── test_repositories/
-│           ├── __init__.py
-│           ├── test_user_repository.py
-│           ├── test_organization_repository.py
-│           └── test_job_listing_repository.py
+│   │   ├── base.py
+│   │   ├── job_listing_application.py
+│   │   ├── job_listing.py
+│   │   ├── organization_user_settings.py
+│   │   ├── organization.py
+│   │   ├── user_notification_settings.py
+│   │   ├── user_resume.py
+│   │   └── user.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── job_listing_application_service.py
+│   │   ├── job_listing_service.py
+│   │   ├── organization_service.py
+│   │   ├── organization_user_settings_service.py
+│   │   ├── user_notification_settings_service.py
+│   │   ├── user_resume_service.py
+│   │   ├── user_service.py
+│   │   └── auth/
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── job-board.db
+│   │   └── test_db.py
+│   └── utils/
+│       └── __init__.py
 ├── docker/
-│   ├── Dockerfile
-│   ├── docker-compose.yml
 │   ├── docker-compose.dev.yml
-│   └── docker-compose.prod.yml
-├── scripts/
-│   ├── start.sh
-│   ├── migrate.sh
-│   ├── seed.py
-│   └── backup.sh
+│   ├── docker-compose.prod.yml
+│   ├── docker-compose.yml
+│   └── Dockerfile
 ├── docs/
 │   ├── api/
 │   ├── deployment/
 │   └── development/
-├── .env.example
+├── scripts/
+│   ├── backup.sh
+│   ├── migrate.sh
+│   ├── seed.py
+│   └── start.sh
 ├── .env.dev
+├── .env.example
 ├── .env.prod
-├── .gitignore
-├── requirements.txt
-├── requirements-dev.txt
+├── .python-version
 ├── alembic.ini
-├── pytest.ini
+├── job-board.db
+├── main.py
 ├── pyproject.toml
+├── pytest.ini
 └── README.md

@@ -48,7 +48,7 @@ Hire-Mind provides a platform for employers to post job openings and for job see
 3. **Install backend dependencies:**
    ```bash
    cd backend
-   uv pip install -r requirements.txt
+   uv sync
    ```
 4. **Install frontend dependencies:**
    ```bash
@@ -61,7 +61,7 @@ Hire-Mind provides a platform for employers to post job openings and for job see
 1. **Start the backend development server:**
    ```bash
    cd backend
-   uvicorn main:app --reload
+   fastapi dev main.py
    ```
 2. **Start the frontend development server:**
    ```bash

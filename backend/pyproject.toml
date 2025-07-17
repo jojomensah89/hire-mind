@@ -11,10 +11,17 @@ dependencies = [
     "alembic",
     "psycopg2-binary", # Or asyncpg if you prefer async driver
     "python-dotenv",
-    "pydantic-settings",
     "passlib[bcrypt]",
     "python-jose[cryptography]",
     "python-multipart",
+    "clerk-backend-api>=3.0.5",
+    "requests>=2.32.4",
+    "httpx>=0.28.1",
+    "cachetools>=6.1.0",
+    "pydantic-settings>=2.10.1",
+    "pyjwt>=2.10.1",
+    "svix>=1.69.0",
+    "pytest>=8.4.1",
 ]
 
 [project.optional-dependencies]
