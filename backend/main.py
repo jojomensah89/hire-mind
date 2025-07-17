@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import logging
 from app.api.v1.router import api_router
 from app.api.auth.webhook import router as webhooks_router
 from app.config.settings import settings
+from app.config.logging import setup_logging, get_auth_logger
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+# Configure structured logging
+setup_logging()
+logger = get_auth_logger("main")
 
 app = FastAPI(
     title=settings.PROJECT_NAME,

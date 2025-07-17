@@ -21,6 +21,7 @@ dependencies = [
     "pydantic-settings>=2.10.1",
     "pyjwt>=2.10.1",
     "svix>=1.69.0",
+    "pytest>=8.4.1",
 ]
 
 [project.optional-dependencies]
